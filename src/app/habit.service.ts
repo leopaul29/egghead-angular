@@ -20,7 +20,7 @@ export class HabitService {
     {
       id: 3,
       title: 'habits 3',
-      count:3
+      count:6
     },
   ];
 

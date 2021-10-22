@@ -3,11 +3,15 @@ import { Habit } from '../habit';
 
 @Component({
   selector: 'app-habit-item',
-  template: ` <li>{{ habit.title }} (Count: {{habit.count}})</li> `,
+  template: `
+    <li [style.color]="habit.streak ? 'red' : 'black'">
+      {{ habit.title }} (Count: {{ habit.count }})
+    </li>
+  `,
   styles: [],
 })
 export class HabitItemComponent implements OnInit {
-  @Input() habit:Habit;
+  @Input() habit: Habit;
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Habit } from '../habit';
 import { HabitService } from '../habit.service';
 
@@ -26,7 +27,14 @@ export class HabitListComponent implements OnInit {
     // simple way
     //this.habitService.getHabits().subscribe((habits) => (this.habits = habits));
 
-    this.habits = this.habitService.getHabits();
+    this.habits = this.habitService.getHabits().pipe(
+      map((habits) => {
+        return habits.map((habit) => {
+          habit.streak = habit.count > 5 ? true : false;
+          return habit;
+        });
+      })
+    );
   }
 
   onAddHabit(newHabit) {
