@@ -71,12 +71,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "egghead-angular:build",
-            "proxyConfig": "src/proxy.conf.json"
+            "browserTarget": "egghead-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "egghead-angular:build:production"
+              "browserTarget": "egghead-angular:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
               "browserTarget": "egghead-angular:build:development"
