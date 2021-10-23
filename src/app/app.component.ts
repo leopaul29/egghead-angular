@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: ` 
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <app-habit-list></app-habit-list>
+  </div>`,
   styles: [
     `
       h1 {
