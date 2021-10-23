@@ -8,9 +8,11 @@ import { HabitListComponent } from './habit-list/habit-list.component';
 import { HabitItemComponent } from './habit-item/habit-item.component';
 import { HabitFormComponent } from './habit-form/habit-form.component';
 import { HabitsComponent } from './habits/habits.component';
+import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
   { path: 'habits', component: HabitsComponent },
+  { path: 'account', component: AccountComponent },
   { path: '', redirectTo: '/habits', pathMatch: 'full' },
 ];
 @NgModule({
@@ -26,6 +28,7 @@ const routes: Routes = [
     HabitItemComponent,
     HabitFormComponent,
     HabitsComponent,
+    AccountComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
