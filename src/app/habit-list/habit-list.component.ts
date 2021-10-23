@@ -16,7 +16,6 @@ import { HabitService } from '../habit.service';
       ></app-habit-item>
     </ul>
   `,
-  styleUrls: ['./habit-list.component.css'],
 })
 export class HabitListComponent implements OnInit {
   habits: Observable<Habit[]>;
