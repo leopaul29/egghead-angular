@@ -9,10 +9,12 @@ import { HabitItemComponent } from './habit-item/habit-item.component';
 import { HabitFormComponent } from './habit-form/habit-form.component';
 import { HabitsComponent } from './habits/habits.component';
 import { AccountComponent } from './account/account.component';
+import { AccountDetailComponent } from './account-detail/account-detail.component';
 
 const routes: Routes = [
   { path: 'habits', component: HabitsComponent },
   { path: 'account', component: AccountComponent },
+  { path: 'account/:id', component: AccountDetailComponent },
   { path: '', redirectTo: '/habits', pathMatch: 'full' },
 ];
 @NgModule({
@@ -29,6 +31,7 @@ const routes: Routes = [
     HabitFormComponent,
     HabitsComponent,
     AccountComponent,
+    AccountDetailComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
