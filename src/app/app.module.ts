@@ -10,11 +10,20 @@ import { HabitFormComponent } from './habit-form/habit-form.component';
 import { HabitsComponent } from './habits/habits.component';
 import { AccountComponent } from './account/account.component';
 import { AccountDetailComponent } from './account-detail/account-detail.component';
+import { AccountInfoComponent } from './account-info/account-info.component';
+import { AccountItemsComponent } from './account-items/account-items.component';
 
 const routes: Routes = [
   { path: 'habits', component: HabitsComponent },
   { path: 'account', component: AccountComponent },
-  { path: 'account/:id', component: AccountDetailComponent },
+  {
+    path: 'account/:id',
+    component: AccountDetailComponent,
+    children: [
+      { path: 'info', component: AccountInfoComponent },
+      { path: 'items', component: AccountItemsComponent },
+    ],
+  },
   { path: '', redirectTo: '/habits', pathMatch: 'full' },
 ];
 @NgModule({
