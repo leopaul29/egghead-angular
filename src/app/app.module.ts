@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,9 +12,11 @@ import { AccountComponent } from './account/account.component';
 import { AccountDetailComponent } from './account-detail/account-detail.component';
 import { AccountInfoComponent } from './account-info/account-info.component';
 import { AccountItemsComponent } from './account-items/account-items.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: 'habits', component: HabitsComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'account', component: AccountComponent },
   {
     path: 'account/:id',
@@ -32,6 +34,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    FormsModule,
   ],
   declarations: [
     AppComponent,
@@ -41,6 +44,7 @@ const routes: Routes = [
     HabitsComponent,
     AccountComponent,
     AccountDetailComponent,
+    HomeComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
